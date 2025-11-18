@@ -1,0 +1,334 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Samson Dire — Computer Science Graduate</title>
+  <meta name="description" content="Portfolio of Samson Dire — Computer Science graduate. Software, database and web developer from Papua New Guinea." />
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --muted:#94a3b8; --accent:#00c2a8; --glass: rgba(255,255,255,0.04);
+      --max-width:1100px; --radius:14px; --gap:24px; font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;background:linear-gradient(180deg,#071023 0%, #071a2a 60%);color:#e6eef6;line-height:1.5}
+    .container{max-width:var(--max-width);margin:0 auto;padding:40px 20px}/* Header / Nav */
+header{position:sticky;top:16px;z-index:60}
+nav{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo .avatar{width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#2dd4bf);display:flex;align-items:center;justify-content:center;font-weight:700;color:#04202a}
+.nav-links{display:flex;gap:12px}
+.nav-links a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:10px;font-size:14px}
+.nav-links a:hover{color:#fff;background:rgba(255,255,255,0.03)}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:1fr 380px;gap:32px;align-items:center;margin-top:28px}
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:28px;border-radius:var(--radius);box-shadow:0 6px 30px rgba(2,6,23,0.6);backdrop-filter: blur(6px)}
+.intro h1{font-size:34px;margin:0 0 6px}
+.intro p.lead{margin:0 0 14px;color:var(--muted)}
+.cta{display:flex;gap:12px}
+.btn{padding:10px 14px;border-radius:10px;text-decoration:none;display:inline-flex;align-items:center;gap:10px}
+.btn-primary{background:var(--accent);color:#002825}
+.btn-ghost{border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+
+/* Profile card */
+.profile{display:flex;flex-direction:column;gap:12px}
+.profile-photo {
+  width: 100%;       /* Make it fit the container */
+  max-width: 250px;  /* Maximum width for desktop */
+  height: auto;      /* Maintain aspect ratio */
+  border-radius: 12px; /* Rounded corners */
+  object-fit: cover; /* Crop excess parts if needed */
+  display: block;
+  margin: 0 auto;    /* Center in container */
+}
+.contact-list{display:flex;flex-direction:column;gap:8px}
+.contact-item{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:14px}
+
+/* Sections */
+section{margin-top:36px}
+.section-title{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.section-title h2{margin:0;font-size:18px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.skill-list{display:flex;flex-wrap:wrap;gap:10px}
+.skill{background:var(--glass);padding:8px 10px;border-radius:10px;font-size:14px;color:var(--muted)}
+
+.project{padding:14px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));border:1px solid rgba(255,255,255,0.03)}
+.project h3{margin:0 0 8px;font-size:16px}
+.project p{margin:0;color:var(--muted);font-size:14px}
+.project .meta{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
+.chip{padding:6px 8px;border-radius:8px;background:rgba(255,255,255,0.02);font-size:12px;color:var(--muted)}
+
+.edu-list, .exp-list{display:flex;flex-direction:column;gap:12px}
+.edu-item{padding:12px;border-radius:10px;background:rgba(255,255,255,0.01);border:1px solid rgba(255,255,255,0.02)}
+
+/* Contact form */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
+textarea{min-height:120px}
+
+footer{margin:40px 0 80px;text-align:center;color:var(--muted);font-size:13px}
+
+/* Animations */
+.fade-in{opacity:0;transform:translateY(12px);animation:fadeIn 0.7s forwards}
+.delay-1{animation-delay:0.08s}.delay-2{animation-delay:0.16s}.delay-3{animation-delay:0.24s}.delay-4{animation-delay:0.32s}
+@keyframes fadeIn{to{opacity:1;transform:none}}
+
+/* Responsive */
+@media (max-width:920px){.hero{grid-template-columns:1fr;}.profile .photo{height:220px}.grid{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr}.nav-links{display:none}}
+@media (max-width:480px){body{padding-bottom:60px}.intro h1{font-size:28px}}
+
+/* subtle floating circles */
+.bg-decor{position:fixed;right:-120px;top:-120px;width:420px;height:420px;background:radial-gradient(circle at 30% 30%, rgba(0,194,168,0.12), transparent 20%), radial-gradient(circle at 70% 70%, rgba(45,212,191,0.08), transparent 20%);border-radius:50%;filter:blur(40px);z-index:0}
+
+  </style>
+</head>
+<body>
+  <div class="bg-decor"></div>
+  <div class="container">
+    <header>
+      <nav>
+        <div class="logo">
+          <div class="avatar">SD</div>
+          <div>
+            <div style="font-weight:700">Samson Dire</div>
+            <div style="font-size:12px;color:var(--muted)">Computer Science Graduate</div>
+          </div>
+        </div>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#experience">Experience</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </header><main>
+  <section class="hero">
+    <div class="card intro fade-in delay-1">
+      <h1>Hi — I’m <span style="color:var(--accent)">Samson Dire</span></h1>
+      <p class="lead">Motivated and detail-oriented Computer Science graduate from the University of Papua New Guinea. I build practical desktop & web applications, design database systems, and explore network security solutions.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px">
+        <a class="btn btn-primary" href="#contact">Hire / Contact</a>
+        <a class="btn btn-ghost" href="resume.pdf" download>Download CV</a>
+      </div>
+      <div style="display:flex;gap:12px;margin-top:12px;align-items:center">
+        <div style="background:rgba(255,255,255,0.02);padding:8px 12px;border-radius:10px">
+          <div style="font-size:12px;color:var(--muted)">Location</div>
+          <div style="font-weight:700">Gerehu Stage 2, Port Moresby</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.02);padding:8px 12px;border-radius:10px">
+          <div style="font-size:12px;color:var(--muted)">Major</div>
+          <div style="font-weight:700">Mathematics, Statistics & Computer Science</div>
+        </div>
+      </div>
+    </div>
+    <aside class="card profile fade-in delay-2">
+     <div class="photo-container">
+        <img src="SamsonDire.jpg" alt="Samson Dire" class="profile-photo">
+     </div>
+    <div class="contact-list">
+     <div class="contact-item"><strong>Email:</strong> <a href="mailto:diresamson625@gmail.com">diresamson625@gmail.com</a></div>
+     <div class="contact-item"><strong>Phone:</strong> <a href="tel:+67582874961">+675 828 74961</a></div>
+     <div class="contact-item"><strong>CGPA:</strong> 3.15</div>
+     <div class="contact-item"><strong>Graduated:</strong> April 28, 2025</div>
+  </div>
+</aside>
+    
+  </section>
+
+  <section id="about" class="fade-in delay-3">
+    <div class="section-title"><h2>About Me</h2></div>
+    <div class="card">
+      <p>Motivated and detail-oriented Computer Science graduate from the University of Papua New Guinea, with strong skills in software development, database systems and network security. Experienced in developing practical projects such as the SME Stock Tracker, Intrusion Detection System (IDS), Fleet Control Database & Website Development. Demonstrates excellent problem-solving, teamwork & leadership skills gained through active involvement in UPNG Nazarene Chaplaincy Ministry.</p>
+    </div>
+  </section>
+
+  <section id="skills" class="fade-in delay-4">
+    <div class="section-title"><h2>Skills</h2></div>
+    <div class="card">
+      <div style="display:flex;gap:24px;flex-wrap:wrap">
+        <div style="flex:1;min-width:220px">
+          <h3 style="margin-top:0">Programming</h3>
+          <div class="skill-list">
+            <span class="skill">Java</span>
+            <span class="skill">Python</span>
+            <span class="skill">C++</span>
+            <span class="skill">HTML</span>
+            <span class="skill">CSS</span>
+            <span class="skill">JavaScript</span>
+          </div>
+          <h3 style="margin-top:12px">Databases & Tools</h3>
+          <div class="skill-list">
+            <span class="skill">SQLite</span>
+            <span class="skill">MySQL</span>
+            <span class="skill">MS Access</span>
+            <span class="skill">Eclipse</span>
+            <span class="skill">Visual Studio</span>
+            <span class="skill">GitHub</span>
+          </div>
+        </div>
+        <div style="flex:1;min-width:220px">
+          <h3 style="margin-top:0">Software & Systems</h3>
+          <div class="skill-list">
+            <span class="skill">Desktop & Web Applications</span>
+            <span class="skill">Network & Operating Systems</span>
+            <span class="skill">IDS Concepts</span>
+          </div>
+          <h3 style="margin-top:12px">Soft Skills</h3>
+          <div class="skill-list">
+            <span class="skill">Problem-solving</span>
+            <span class="skill">Teamwork</span>
+            <span class="skill">Communication</span>
+            <span class="skill">Leadership</span>
+            <span class="skill">Adaptability</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="fade-in delay-1">
+    <div class="section-title"><h2>Projects</h2></div>
+    <div class="grid">
+      <div class="project">
+        <h3>SME Stock Tracker (Desktop)</h3>
+        <p>Desktop inventory & sales management system for small businesses. Built with Java (Swing) and SQLite to manage products, sales and stock levels offline.</p>
+        <div class="meta">
+          <span class="chip">Java</span>
+          <span class="chip">SQLite</span>
+          <span class="chip">Swing</span>
+          <span class="chip">University Project</span>
+        </div>
+      </div>
+
+      <div class="project">
+        <h3>Intrusion Detection System (IDS)</h3>
+        <p>Prototype IDS for learning network security concepts — includes packet inspection rules, logging and alerting components used in coursework.</p>
+        <div class="meta">
+          <span class="chip">Network Security</span>
+          <span class="chip">Python</span>
+          <span class="chip">Research</span>
+        </div>
+      </div>
+
+      <div class="project">
+        <h3>Fleet Control Database</h3>
+        <p>Database system for managing car hire operations: vehicle records, client data and rental transactions using MySQL / MS Access.</p>
+        <div class="meta">
+          <span class="chip">MySQL</span>
+          <span class="chip">Database Design</span>
+          <span class="chip">SQL</span>
+        </div>
+      </div>
+
+      <div class="project">
+        <h3>Responsive Portfolio / Business Website</h3>
+        <p>Designed and developed a responsive website using HTML, CSS and JavaScript to showcase content and interactive features.</p>
+        <div class="meta">
+          <span class="chip">HTML</span>
+          <span class="chip">CSS</span>
+          <span class="chip">JavaScript</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="fade-in delay-2">
+    <div class="section-title"><h2>Education & Experience</h2></div>
+    <div class="card">
+      <div class="edu-list">
+        <div class="edu-item">
+          <strong>Bachelor of Science — Mathematics, Statistics & Computer Science</strong>
+          <div style="color:var(--muted);font-size:13px">University of Papua New Guinea — 2021 - 2024 (Graduated April 28, 2025)</div>
+          <div style="margin-top:8px;color:var(--muted)">CGPA: 3.15</div>
+        </div>
+        <div class="edu-item">
+          <strong>Upper Secondary School Certificate</strong>
+          <div style="color:var(--muted);font-size:13px">Minj Secondary School — 2019 - 2020</div>
+          <div style="margin-top:8px;color:var(--muted)">Subjects: Language & Literature (B), Advanced Mathematics (A), Physics (A), Chemistry (A), Biology (A)</div>
+        </div>
+      </div>
+
+      <div style="margin-top:18px">
+        <h3 style="margin:0 0 8px">Leadership & Volunteering</h3>
+        <div style="color:var(--muted)">Active volunteer with UPNG Nazarene Chaplaincy Ministry — organized worship groups, fundraisers and served on the Executive Fundraising Committee (2021 - 2023).</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="fade-in delay-3">
+    <div class="section-title"><h2>Contact</h2></div>
+    <div class="grid">
+      <div class="card">
+        <form id="contactForm" onsubmit="sendMessage(event)">
+          <div class="contact-grid">
+            <input type="text" id="name" placeholder="Your name" required />
+            <input type="email" id="email" placeholder="Your email" required />
+          </div>
+          <div style="margin-top:12px">
+            <input type="text" id="subject" placeholder="Subject" />
+          </div>
+          <div style="margin-top:12px">
+            <textarea id="message" placeholder="Message" required></textarea>
+          </div>
+          <div style="margin-top:12px;display:flex;gap:10px">
+            <button type="submit" class="btn btn-primary">Send Message</button>
+            <a class="btn btn-ghost" href="mailto:diresamson625@gmail.com">Email Me</a>
+          </div>
+          <p id="formStatus" style="color:var(--muted);font-size:13px;margin-top:8px"></p>
+        </form>
+      </div>
+
+      <aside class="card">
+        <h3 style="margin-top:0">Get in touch</h3>
+        <p style="color:var(--muted)">Prefer email? Send a message to <a href="mailto:diresamson625@gmail.com" style="color:var(--accent)">diresamson625@gmail.com</a> or call <a href="tel:+67582874961" style="color:var(--accent)">+675 828 74961</a>.</p>
+        <div style="margin-top:12px">
+          <strong>References</strong>
+          <div style="margin-top:8px;color:var(--muted)">
+            <div><strong>Emmanuel Budibudi</strong> — IT Lecturer, UPNG<br/>Phone: 712 3541 · Email: emmanuel.budibudi@upng.ac.pg</div>
+            <div style="margin-top:8px"><strong>Nelson Dupre</strong><br/>Phone: 3267 464</div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <footer>
+    <div>© Samson Dire — Computer Science Graduate • Gerehu Stage 2, Port Moresby</div>
+  </footer>
+</main>
+
+  </div>  <script>
+    // Smooth scrolling for nav
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',function(e){
+        e.preventDefault(); const t=document.querySelector(this.getAttribute('href'))||document.body; t.scrollIntoView({behavior:'smooth',block:'start'});
+      })
+    })
+
+    // Simple contact form that constructs a mailto (no backend required)
+    function sendMessage(e){
+      e.preventDefault();
+      const name=document.getElementById('name').value.trim();
+      const email=document.getElementById('email').value.trim();
+      const subject=document.getElementById('subject').value.trim()||'Portfolio Contact';
+      const message=document.getElementById('message').value.trim();
+      if(!name||!email||!message) return;
+      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
+      const mailto = `mailto:diresamson625@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+      window.location.href = mailto;
+      document.getElementById('formStatus').textContent='Opening your email client...';
+    }
+
+    // Simple reveal animations on scroll
+    const reveals = document.querySelectorAll('.fade-in');
+    const obs = new IntersectionObserver((entries)=>{
+      entries.forEach(ent=>{if(ent.isIntersecting) ent.target.style.animationPlayState='running';});
+    },{threshold:0.12});
+    reveals.forEach(r=>{r.style.animationPlayState='paused';obs.observe(r)});
+  </script></body>
+</html>
